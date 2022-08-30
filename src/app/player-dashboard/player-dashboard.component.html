@@ -1,0 +1,97 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue ;">Player Details</h1>
+        <div class="d-flex">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class=" btn btn-success">Add player</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table table-light table-hover mt-3" >
+    <thead class="table-secondary">
+        <tr mat-row class=" table-dark">
+            <th>Player ID</th>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Nationality</th>
+            <th>Club</th>
+            <th>Position</th>
+            <th>Value</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-striped table-success">
+        <tr mat-row *ngFor="let playerVal of playerData">
+            <td>{{playerVal.id}}</td>
+            <td>{{playerVal.firstName}}</td>
+            <td>{{playerVal.lastName}}</td>
+            <td>{{playerVal.nationality}}</td>
+            <td>{{playerVal.club}}</td>
+            <td>{{playerVal.position}}</td>
+            <td>{{playerVal.value}}</td>
+            <td>
+                <button (click)="onEdit(playerVal)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deletePlayer(playerVal)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Player Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="formValue" >
+             
+                <div class="mb-3">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="firstName"> <br>
+                
+                </div>
+                <div class="mb-3">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text"  class="form-control" placeholder="Last Name" formControlName="lastName"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" class="form-control" placeholder="Nationality" formControlName="nationality"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="position">Club:</label>
+                    <input type="text" class="form-control" placeholder="Club" formControlName="club"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="position">Position:</label>
+                    <input type="text" class="form-control" placeholder="Position" formControlName="position"> <br>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="value">Value:</label>
+                    <input type="text" class="form-control" placeholder="Value" formControlName="value"> <br>
+                </div>
+
+                
+
+
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="postPlayerDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="updatePlayerDetails()" class="btn btn-primary">Update</button> 
+        </div>
+      </div>
+    </div>

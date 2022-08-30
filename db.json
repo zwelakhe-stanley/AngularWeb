@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "firstName": "Paul",
+      "lastname": "Pogba",
+      "nationality": "France",
+      "club": "Juventus FC",
+      "position": "Midfielder",
+      "value": "$90m",
+      "id": 3
+    },
+    {
+      "firstName": "lukas",
+      "lastname": "podolski",
+      "nationality": "ger",
+      "club": "arsenal",
+      "position": "striker",
+      "value": "$10m",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
