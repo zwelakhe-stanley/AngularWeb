@@ -1,13 +1,12 @@
-{
-  "posts": [
+[
     {
-      "id": 7,
       "firstName": "Cristiano",
       "lastName": "Ronaldo",
       "nationality": "POR",
       "club": "Manchester United",
-      "position": "Center Foward",
-      "value": "$100m"
+      "position": "CF",
+      "value": "$100m",
+      "id": 7
     },
     {
       "firstName": "Paul",
@@ -37,17 +36,12 @@
       "id": 10
     },
     {
-      "firstName": "Jadon",
-      "lastName": "Sancho",
-      "nationality": "ENG",
-      "club": "Manchester United ",
-      "position": "LW",
-      "value": "$120m",
+      "firstName": "Lukas",
+      "lastName": "Podolski",
+      "nationality": "GER",
+      "club": "ARS",
+      "position": "ST",
+      "value": "$10m",
       "id": 11
     }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
-}
+  ]

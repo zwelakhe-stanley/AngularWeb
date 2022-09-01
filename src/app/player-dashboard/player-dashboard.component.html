@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-light bg-secondary">
     <div class="container-fluid">
         <h1 style="color: aliceblue ;">Player Details</h1>
         <div class="d-flex">
@@ -10,27 +10,27 @@
 <table class="table table-light table-hover mt-3" >
     <thead class="table-secondary">
         <tr mat-row class=" table-dark">
-            <th>Player ID</th>
-            <th>First Name</th>
-            <th>Last name</th>
-            <th>Nationality</th>
-            <th>Club</th>
-            <th>Position</th>
-            <th>Value</th>
-            <th>Action</th>
+            <th>Player ID</th>&nbsp;
+            <th>First Name</th>&nbsp;
+            <th>Last Name</th>&nbsp;
+            <th>Nationality</th>&nbsp;
+            <th>Club</th>&nbsp;
+            <th>Position</th>&nbsp;
+            <th>Value</th>&nbsp;
+            <th>Action</th>&nbsp;
         </tr>
     </thead>
     <tbody class="table-striped table-success">
         <tr mat-row *ngFor="let playerVal of playerData">
-            <td>{{playerVal.id}}</td>
-            <td>{{playerVal.firstName}}</td>
-            <td>{{playerVal.lastName}}</td>
-            <td>{{playerVal.nationality}}</td>
-            <td>{{playerVal.club}}</td>
-            <td>{{playerVal.position}}</td>
-            <td>{{playerVal.value}}</td>
+            <td>{{playerVal.id}}</td>&nbsp;
+            <td>{{playerVal.firstName}}</td>&nbsp;
+            <td>{{playerVal.lastName}}</td>&nbsp;
+            <td>{{playerVal.nationality}}</td>&nbsp;
+            <td>{{playerVal.club}}</td>&nbsp;
+            <td>{{playerVal.position}}</td>&nbsp;
+            <td>{{playerVal.value}}</td>&nbsp;
             <td>
-                <button (click)="onEdit(playerVal)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="onEdit(playerVal)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
                 <button (click)="deletePlayer(playerVal)" class="btn btn-danger mx-3">Delete</button>
             </td>
         </tr>
@@ -40,12 +40,12 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="exampleModal" tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Player Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -89,7 +89,7 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" id="cancel" class="btn btn-secondary" data-dismiss="modal" >Close</button>
           <button type="button" (click)="postPlayerDetails()" class="btn btn-primary">Add</button>
           <button type="button" (click)="updatePlayerDetails()" class="btn btn-primary">Update</button> 
         </div>

@@ -33,7 +33,7 @@ export class PlayerDashboardComponent implements OnInit {
   postPlayerDetails(){
     this.playerModelObj.id = this.formValue.value.id;
     this.playerModelObj.firstName = this.formValue.value.firstName;
-    this.playerModelObj.lastname = this.formValue.value.lastName;
+    this.playerModelObj.lastName = this.formValue.value.lastName;
     this.playerModelObj.nationality = this.formValue.value.nationality;
     this.playerModelObj.club = this.formValue.value.club;
     this.playerModelObj.position = this.formValue.value.position;
@@ -76,9 +76,9 @@ export class PlayerDashboardComponent implements OnInit {
   }
 
   updatePlayerDetails() {
-    this.playerModelObj.id = this.formValue.value.id;
+    
     this.playerModelObj.firstName = this.formValue.value.firstName;
-    this.playerModelObj.lastname = this.formValue.value.lastName;
+    this.playerModelObj.lastName = this.formValue.value.lastName;
     this.playerModelObj.nationality = this.formValue.value.nationality;
     this.playerModelObj.club = this.formValue.value.club;
     this.playerModelObj.position = this.formValue.value.position;
@@ -86,12 +86,18 @@ export class PlayerDashboardComponent implements OnInit {
 
     this.api.updatePlayer(this.playerModelObj, this.playerModelObj.id)
     .subscribe(res=>{
+      console.log(res)
       alert("Updated successfully!")
       let ref = document.getElementById('cancel')
       ref?.click();
       this.formValue.reset();
       this.getAllPlayers();
     })
+  }
+
+  close()
+  {
+    this
   }
 
 }
